@@ -1,0 +1,49 @@
+<div class="span-24 last">
+  <div class="span-16">
+    
+    <div id="contact-us">
+      <h2><%= t("contact_us") %></h2>
+        <p class="first-line">Contact us todary for a free analysis and consultation:</p>
+        <p><span class="bold">Phone: </span>1-(903)-231-3933 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="bold">Email:</span><a href="mailto:sales@smokefit.com">sales@smokefit.com</a></p>
+        
+      <%= hook :contact do %>
+      
+      <%= render "shared/error_messages", :target => @contact %>
+      
+      <%= form_for(@contact, :html => {:honeypot => true}) do |f| %>
+        <%= hook :contact_inside_form do %>
+        <div class="field">
+          <%= f.label :name, "Full name" %><span class="required">*</span><br />
+          <%= f.text_field :name, :class=> "title" %>
+        </div>
+        <div class="field">
+          <%= f.label :email, t("email") %><span class="required">*</span><br />
+          <%= f.text_field :email, :class=> "title" %>
+        </div>
+        <div class="field">
+          <%= f.label :phone, "Phone" %><span class="required">*</span><br />
+          <%= f.text_field :phone, :class=> "title" %>
+        </div>
+        <div class="field">
+           <%= f.label :topic_id, "Subject" %>
+           <%= f.collection_select :topic_id, @topics, :id, :name, :class=> "title" %>
+        </div>
+        <div class="field">
+          <%= f.label :message, t("message") %><br />
+          <%= f.text_area :message, :class=> "title", :rows => 5 %>
+        </div>
+        <div class="action"><%= f.submit t("send_message"), :class => "css3button-ligth-blue" %></div>
+        <% end %>
+      <% end %>
+      <% end %>
+    </div>
+    
+  </div>
+  
+  <%# sidebar  %>
+  <div class="span-8 last">
+    <%= render :partial => 'shared/small_fact_sheet' %>
+  </div>
+  
+  <hr class="space">
+</div>

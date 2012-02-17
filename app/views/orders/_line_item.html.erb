@@ -1,0 +1,31 @@
+<tr class="product-information">
+  <td class="image" style="width:100px">
+    <%- locals = {:item_form => item_form, :variant => variant, :line_item => line_item} %>
+    <% if variant.images.length == 0 %>
+      <%= small_image(variant.product, :height => "70px", :width => "100px") %>
+    <% else %>
+      <%=  image_tag(variant.images.first.attachment.url(:small), :height => "70px", :width => "100px")   %>
+    <% end %>
+  </td>
+  <td style="width:400px"> </td>
+  <td class="unit-price bold">
+    <%= hook :cart_item_price, locals do %>
+      <%=  product_price(line_item) %>
+    <% end %>
+  </td>
+  <td class="operator bold">
+    X
+  </td>
+  <td class="quantity bold">
+    <%= item_form.text_field :quantity, :size => 3, :class => "line_item_quantity" %>
+  </td>
+  <td class="operator bold">
+    =
+  </td>
+  <td class="total bold">
+    <%= format_price(product_price(line_item, :format_as_currency => false) * line_item.quantity) unless line_item.quantity.nil? %>
+  </td>
+  <td class="actions regular">
+    <%= link_to("Remove", '#', :class => 'delete button') %>
+  </td>
+</tr>

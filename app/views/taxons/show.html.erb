@@ -1,0 +1,20 @@
+<div class="span-24 last">
+  <%= breadcrumbs(:taxon => @taxon, :product => @product, :product_group => @product_group) %>
+</div>
+<hr class="space dashed">
+
+<h2><%= @taxon.name %></h2>
+
+<% if @taxon.children.empty? || !params[:keywords].blank? %>
+
+  <% if @products.empty? %>
+    <%= t(:no_products_found) %>
+  <% else %>
+    <%= render "shared/products", :products => @products, :taxon => @taxon %>
+  <% end %>
+
+<% else %>
+
+  <%= render :partial => "taxon", :collection => @taxon.children %>
+
+<% end %>

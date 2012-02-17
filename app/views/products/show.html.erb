@@ -1,0 +1,40 @@
+<div class="span-24 last">
+  <%= breadcrumbs(:taxon => @taxon, :product => @product, :product_group => @product_group) %>
+</div>
+<hr class="space dashed">
+
+<div class="span-24 last">
+  <div class="span-15">
+    <h2><%= @product.name %></h2>
+    <div id="product-images" class="span-7">
+      <div id="main-image">
+        <%= render 'image' %>
+      </div>
+      <div id="thumbnails">
+        <%= render 'thumbnails', :product => @product %>
+      </div>
+    </div>
+    <div class="span-8 last" style="position:relative">
+      <div id="cart-form">
+        <%= render 'cart_form' %>
+      </div>
+    </div>
+    
+    <hr class="space">
+    
+    <div class="span-15 last">
+      <div id="product-description">
+        <%= product_description(@product) rescue t("product_has_no_description") %>
+        <%= render 'properties' %>
+      </div>
+    </div>
+    <!-- span-15  -->
+  </div>
+  
+  <!-- Sidebar -->
+  <%= render 'taxons' %>
+  
+  <%= render :partial => 'shared/product_index_sidebar' %>
+
+  <!-- end span-24 last -->
+</div>

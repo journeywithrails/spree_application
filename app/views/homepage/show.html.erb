@@ -1,0 +1,169 @@
+<% content_for :inside_header do %>
+  <div id="videos" class="span-24 last">
+    <div class="span-5 prepend-6">
+      <a href="http://www.youtube.com/watch?v=QxZjGUiaIS0" rel="prettyPhoto" >
+        <img src="images/smokefit/video1.png" alt="What the celebrities say" height="150px" width="220px" />
+      </a>
+    </div>
+    <div class="span-5 prepend-1 last">
+      <a href="http://www.youtube.com/watch?v=8OTWKn4WLa4" rel="prettyPhoto" >
+        <img src="images/smokefit/video3.png" alt="What the doctors say" height="150px" width="220px" />
+      </a>
+    </div>
+  </div>
+  
+  <div id="slider">
+    <ul>
+      <li>
+        <div class="slide slide-1">
+          <a href="/t/categories/kits" class="button slide1"><img src="images/smokefit/slide-1_button.png" alt="Take that step" width="265px" height="98px" /></a>
+        </div>
+      <li>
+        <div class="slide slide-2">
+          <a href="/t/categories/kits" class="button slide2"><img src="images/smokefit/slide-2_button.png" alt="Take that step" width="250px" height="89px" /></a>
+        </div>
+      </li>
+      <li>
+        <div class="slide slide-3">
+          <a href="/t/categories/kits" class="button slide3"><img src="images/smokefit/slide-3_button.png" alt="Take that step" width="249px" height="89px" /></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+<% end %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#slider").easySlider({
+        auto:true,
+        controlsShow:false,
+        numeric:false,
+        continuous: true,
+        speed: 800,
+        pause: 5000
+      });
+    });
+    
+    $("a[rel=prettyPhoto]").each(function(){
+      $(this).prettyPhoto();
+    });
+  </script>
+<% end %>
+
+
+
+<!-- First column -->
+<div class="span-12">
+  <div class="spane-12 last">
+    <h2 style="margin-bottom: -4px;">What is<img style="vertical-align: middle;" src="images/smokefit/mett_smokefit_users.png" alt="Ezeesmoke" height="41px" width="122px" />?</h2>
+  </div>
+  <div class="span-12 last">
+    <p>Ezeesmoke™ e-cigarettes are small, state-of-the-art e-cig devices that vaporize nicotine, water, and flavor to simulate real smoking. The look, feel, and taste of cigarette smoking are perfectly imitated. <b>But the harmful effects of smoking are gone.</b></p>
+  </div>
+  <hr class="space">
+  
+  <div class="sheet">
+    <div class="sheet-body">
+      <img src="images/smokefit/cross.png" alt="cross" height="30px" width="31px" />
+      <img src="images/smokefit/logo-small.png" alt="logo" height="38px" width="140px" />
+      <div class="title">
+        Fact Sheet
+      </div>
+      <hr>
+      <div class="span-2 colborder">
+        <h3>Convenience</h3>
+        <span class="money bigger">Smoke</span>
+        <span class="money">ANYWHERE</span>
+      </div>
+      <div class="span-3 colborder">
+        <h3>Economics</h3>
+        <span class="money size18">Save up to<span class="year">75%</span></span><br>
+        <span class="money small"> on existing expenditures</span>
+      </div>
+      <div class="span-4 last">
+        <h3>Healthier</h3>
+        <span class="money">BU School of Public Health concluded that e-cigs are safer.</span><br>
+        <a href="http://sph.bu.edu/insider/Recent-News/electronic-cigarettes-hold-promise-as-aid-to-quitting.html" target="_blank" class="">Read More</a>
+      </div>
+      
+      <hr class="space">
+      
+      <div class="span-2 colborder">
+        <h3>2nd Hand Smoke</h3>
+        <span class="money size13">No second</span>
+        <span class="money size13">hand Smoke</span>
+      </div>
+      <div class="span-3 colborder">
+        <h3>No Odor</h3>
+        <span class="money">No dirty ashtrays, keep your car and home smelling fresh</span>
+      </div>
+      <div class="span-4 last">
+        <h3>Safety</h3>
+        <span class="money "><span class="year">No</span> fire risk,</span><br>
+        <span class="money "><span class="year">No</span> cigarette burns,</span><br>
+        <span class="money "><span class="year">Keep</span> your family safe</span>
+      </div>
+      
+      <hr class="space">
+    </div>
+  </div>
+</div>
+
+<!-- Second column -->
+
+<div class="span-11 prepend-1 last">
+  <div class="span-11 last">
+    <h2 style="margin-bottom: -1px;">Invest in your future now</h2>
+  </div>
+  <p>Ezeesmoke's™ state of the art ecommerce site offers you unparalleled security, choice and customer service.</p>
+  
+  <div class="small-collumn span-3">
+    <img class="grey-box" src="images/smokefit/home_deluxekit.jpg" alt="Deluxe Kit" height="94px" width="120px" />
+    <div>
+      <span class="big-title">Starter Kits</span><br><br>
+      <a href="/t/categories/kits" class="css3button-ligth-blue">More Info</a>
+    </div>
+  </div>
+  <div class="small-collumn span-3 prepend-1">
+    <img class="grey-box" src="images/smokefit/home_starterkit.jpg" alt="Starter Kit" height="94px" width="120px" />
+    <div>
+      <span class="big-title">Accessories</span><br><br>
+      <a href="/t/categories/accessories" class="css3button-ligth-blue">More Info</a>
+    </div>
+  </div>
+  <div class="small-collumn span-3 prepend-1 last">
+    <img class="grey-box" src="images/smokefit/home_refill.jpg" alt="Refills" height="94px" width="120px" />
+    <div>
+      <span class="big-title">Refills</span><br><br>
+      <a href="/t/categories/refills" class="css3button-ligth-blue">More Info</a>
+    </div>
+  </div>
+  
+  <hr class="space">
+  <hr class="space">
+  <hr class="space">
+  <hr class="space">
+  
+  <div class="span-12 last">
+    <img src="images/smokefit/money-back.png" alt="cross" height="58px" width="420px" />
+  </div>
+  
+  <hr class="space">
+  
+  <div class="span-6">
+    <%= render :partial => 'shared/live_chat_image' %>
+  </div>
+  
+  <div class="span-5 last">
+    <span class="credit-card">
+      We Accept:
+      <br>
+      <img src="images/smokefit/credit-cards.png" alt="cross" height="25px" width="165px" />
+      <br>
+    </span>
+  </div>
+  
+  <hr class="space">
+  
+</div>

@@ -1,0 +1,50 @@
+<% products = Product.all %>
+<div class="span-24 last">
+  <div class="span-24 refills">
+    <div class="span-8" style="text-align:center;">
+      <h2>Tobacco Flavored</h2>
+      <div class="fore-container">
+        <img src="images/smokefit/tobacco.png" alt="image" height="175px" width="290px" />
+        <% if product = products.select{|pro| pro.name.downcase.eql?("tobacco flavored refills - high strength")}.first %>
+          <div>
+            <a href="<%= product_path(product.permalink) %>" class="css3button-ligth-gray">High Strength</a>
+          </div>
+        <% end %>
+        <% if product = products.select{|pro| pro.name.downcase.eql?("tobacco flavored refills - low strength")}.first %>
+          <div>
+            <a href="<%= product_path(product.permalink) %>" class="css3button-ligth-gray">Low Strength</a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    
+    <div class="span-8" style="text-align:center;">
+      <h2>Menthol Flavored</h2>
+      <div class="fore-container">
+        <img src="images/smokefit/menthol.png" alt="image" height="175px" width="290px" />
+        <% if product = products.select{|pro| pro.name.downcase.eql?("menthol flavored refills - high strength")}.first %>
+          <div>
+            <a href="<%= product_path(product.permalink) %>" class="css3button-ligth-gray">High Strength</a>
+          </div>
+        <% end %>
+        <% if product = products.select{|pro| pro.name.downcase.eql?("menthol flavored refills - low strength")}.first %>
+          <div >
+            <a href="<%= product_path(product.permalink) %>" class="css3button-ligth-gray">Low Strength</a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    
+    <div class="span-8 last" style="text-align:center;">
+      <h2>Fruit Flavored</h2>
+      <div class="fore-container">
+        <img src="images/smokefit/fruit.png" alt="image" height="175px" width="290px" />
+        <% if product = products.select{|pro| pro.name.downcase.eql?("fruit flavored refills - medium strength")}.first %>
+          <a href="<%= product_path(product.permalink) %>" class="css3button-ligth-gray">Medium Strength</a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  
+  <hr class="space">
+</div>

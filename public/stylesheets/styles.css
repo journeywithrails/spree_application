@@ -1,0 +1,728 @@
+/*General css files*/
+body{
+  font-family:Arial;
+  background-image:url('/images/smokefit/site-bg.png');
+  background-repeat:repeat-y;
+  background-position:center center;
+}
+#background{
+/*  height:505px;*/
+  z-index:10;
+  position:relative;
+}
+#background.small-background{
+  background-image:url('/images/smokefit/subpage_bg.jpg');
+  height:121px;
+}
+#navigation{
+  z-index:3;
+  position:absolute;
+  top:1;
+}
+.header-contact{
+  text-align: center;
+  padding-top: 4px;
+}
+.header-contact > span, .header-contact > ul{
+  margin-right:4px;
+}
+ul{
+  margin:0px;
+  padding:0px;
+}
+ul.horizontal li{
+  display:inline-block;
+}
+ul.header-menu{
+/*  margin-top:11px;*/
+}
+ul.header-menu li.first a, ul.header-menu li.last a{
+  cursor: default;
+  text-decoration: none;
+  color: transparent;
+  font-size: 18px;
+  display: block;
+  height: 40px;
+  border: 1px solid;
+  border-top: 0;
+  border-bottom: 0;
+  padding-top: 14px;
+}
+ul.header-menu li.first a{
+  border-left: 0;
+  border-right: 1px solid #A0A6AD;
+}
+ul.header-menu li.last a{
+  border-left: 1px solid #DDE1E7;
+  border-right:0;
+}
+ul.header-menu li a.active.last{
+  padding-right: 9px;
+}
+ul.header-menu li a.active{
+  text-decoration: none;
+  color: #3D4D5B;
+  font-size: 14px;
+  text-shadow: 1px 1px 0px #E3EDEC;
+  filter: dropshadow(color=#E3EDEC, offx=1, offy=1);
+
+  display: block;
+  height: 36px;
+  padding-left: 11px;
+  padding-right: 13px;
+  border: 1px solid;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 1px solid #DDE1E7;
+  border-right: 1px solid #A0A6AD;
+  padding-top: 18px;
+}
+ul.header-menu li a.active:hover{
+  background-color:#A2AFC0;
+  color:#243D50;
+}
+ul.header-menu li{
+  margin-left: -3px;
+}
+ul.user-nav li a, ul.user-nav li{
+  text-decoration:none;
+  color:#48606D;
+  font-size:12px;
+}
+ul.user-nav li a:hover{
+  text-decoration:underline;
+}
+ul.user-nav li a span{
+  color:#fff;
+  font-weight:bold;
+}
+.phone{
+  color:#e3edec;
+  font-size:16px;
+  text-shadow: 1px 2px 0px #879e9b;
+  filter: dropshadow(color=#879e9b, offx=1, offy=2);
+}
+#header{
+  width:100%;
+  margin-left:1px;
+  z-index:2;
+}
+#header-logo{
+  background-image:url('/images/smokefit/logo-banner.png');
+  width:180px;
+  height:66px;
+  float:left;
+}
+#header-logo a{
+  height:54px;
+  display:inline-block;
+  width:165px;
+}
+#header-body{
+  background-image:url('/images/smokefit/banner-bg.png');
+  width:758px;
+  height:66px;
+  float:left;
+}
+#header-end{
+  background-image:url('/images/smokefit/banner-end.png');
+  width:12px;
+  height:66px;
+  float:left;
+}
+#videos{
+  position:absolute;
+  bottom:-13px;
+  z-index:10;
+}
+#slider{
+  position:absolute;
+  top:0px;
+  z-index:1;
+}
+#slider ul{ list-style-type:none;}
+.background-wrapper{
+  height: 505px;
+  position:relative;
+}
+.slide{
+  width: 950px;
+  height: 475px;
+  position:relative;
+}
+.slide-1{ background-image:url('/images/smokefit/slide-1.jpg');}
+.slide-2{ background-image:url('/images/smokefit/slide-2.jpg');}
+.slide-3{ background-image:url('/images/smokefit/slide-3.jpg');}
+.button{position:absolute;}
+.button.slide1{bottom: 129px;left: 12px;}
+.button.slide2{bottom: 227px;left: 15px;}
+.button.slide3{bottom: 189px;left: 15px;}
+
+
+p{
+  font-size:13px;
+  color:#4f4f4f;
+}
+h2{
+  font-size:24px;
+  color:#666666;
+}
+.grey-box{
+  border: 1px solid #e4e4e4;
+}
+.sheet{
+  position:relative;
+  background-color: #fff;
+  -moz-box-shadow: 1px 1px 22px #616161;
+  -webkit-box-shadow: 1px 1px 22px #616161;
+  box-shadow: 1px 1px 22px #616161;
+  overflow:hidden;
+}
+.sheet-body{
+  margin:10px;
+}
+.center{
+  text-align:center;
+}
+.sheet-body .title{
+  display:inline-block;
+  font-size:24px;
+  position:absolute;
+  top: 18px;
+  left: 189px;
+  color:#949ea2;
+}
+h3{
+  font-size:11px;
+  font-weight:bold;
+  color:#7c7c7c;
+}
+.sheet-body h2{
+  font-size:18px;
+  color:#949ea2;
+}
+.sheet-body .colborder {
+border-right: 1px dashed #DDD;
+}
+
+.money{
+  font-size:13px;
+  font-weight:bold;
+  color:#54D6E2;
+}
+.money.small{
+  font-size:10px;
+}
+.money.bigger{
+  font-size:25px;
+}
+.money.size18{
+  font-size:18px;
+}
+.money.size13{
+  font-size:13px;
+}
+.year{
+  color:#88bcc1;
+}
+.small-collumn > div{
+  text-align:justify;
+}
+.credit-card{
+  font-size:12px;
+  color:#808080;
+}
+.big-title{
+  color:#3393c6;
+  font-size:16px;
+}
+.small-title{
+  color:#808080;
+  font-size:12px;
+  text-align:justify;
+}
+
+/*Products css files*/
+.breadcrumbs ul{
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+}
+.breadcrumbs ul li{
+  display:inline-block;
+  color:#57697a;
+}
+.breadcrumbs ul li a{
+  color:#3393c6;
+  text-decoration:none;
+}
+.breadcrumbs ul li a:hover{text-decoration:underline;}
+hr.dashed{
+  border-top:1px dotted #545454;
+  opacity:0.3;
+  visibility:visible;
+}
+#product-description{
+  padding-left: 16px;
+}
+#product-description ul{
+  margin-left: 33px;
+}
+  /*grey box on the sidebar*/
+  .grey-box{
+    background-color:#f1f1f8;
+    overflow:hidden;
+  }
+  .grey-box > div{
+    margin:10px;
+  }
+  .grey-box h2{
+    margin: 0px;
+  }
+  
+  .grey-box ul{
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+  }
+  .grey-box ul li{
+    font-size:18px;
+  }
+  .grey-box ul li a{
+    color:#949ea2;
+    text-decoration:none;
+  }
+  .grey-box ul li a:hover{text-decoration:underline;}
+    
+  /*pagination*/
+  .previous_page.disabled{display:none;}
+  .pagination a, .pagination em{
+    border:1px solid #e4e4e4;
+    padding:2px;
+    padding-left:6px;
+    padding-right:6px;
+    text-decoration:none;
+    color:#57697a;
+  }
+  .pagination a:hover{
+    background-color:#f9fce1;
+  }
+  .pagination em{
+    background-color:#f2f1f3;
+    -moz-box-shadow: inset 0px 0px 1px 1px #fff;
+    -webkit-box-shadow: inset 0px 0px 1px 1px #fff;
+    box-shadow: inset 0px 0px 1px 1px #fff;
+  }
+  
+  .product-information h3{
+    color:#3393c6;
+    font-size:22px;
+    margin-bottom: 4px;
+  }
+  .product-information h3 a{
+    text-decoration:none;
+    color:inherit;
+  }
+  
+  .product-information p{
+    color:#4f4f4f;
+  }
+  
+  .product-information .price{
+    font-size:22px;
+    color:#474747;
+  }
+  
+  .css3button-ligth-blue, .continue.button.primary {
+  	font-family: Arial, Helvetica, sans-serif;
+  	font-size: 13px;
+  	color: #3e798c;
+  	padding: 8px 13px;
+  	text-decoration:none;
+  	background: -moz-linear-gradient(
+  		top,
+  		#a7e5f6 0%,
+  		#ffffff 0%,
+  		#6bd0ef);
+  	background: -webkit-gradient(
+  		linear, left top, left bottom, 
+  		from(#a7e5f6),
+  		color-stop(0.0, #ffffff),
+  		to(#6bd0ef));
+  	border-radius: 5px;
+  	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+  	border: 1px solid #5eacc4;
+  	-moz-box-shadow:
+  		2px 2px 3px rgba(217,217,217,1),
+  		inset 0px 0px 1px rgba(209,159,209,0);
+  	-webkit-box-shadow:
+  		2px 2px 3px rgba(217,217,217,1),
+  		inset 0px 0px 1px rgba(209,159,209,0);
+  	text-shadow:
+  		-1px -1px 0px rgba(115,184,205,0.6),
+  		1px 1px 0px rgba(255,255,255,0.7);
+  }
+  .css3button-ligth-blue:hover{
+    color: #3e798c;
+  }
+  
+  .css3button-ligth-green {
+       font-family: Arial, Helvetica, sans-serif;
+       font-size: 13px;
+       color: #0d6109;
+       padding: 8px 13px;
+       background: -moz-linear-gradient(
+               top,
+               #a6f5a9 0%,
+               #ffffff 0%,
+               #4abd38);
+       background: -webkit-gradient(
+               linear, left top, left bottom, 
+               from(#a6f5a9),
+               color-stop(0.0, #ffffff),
+               to(#4abd38));
+       border-radius: 5px;
+       -moz-border-radius: 5px;
+       -webkit-border-radius: 5px;
+       border: 1px solid #6ec25d;
+       -moz-box-shadow:
+               2px 2px 3px rgba(217,217,217,1),
+               inset 0px 0px 1px rgba(209,159,209,0);
+       -webkit-box-shadow:
+               2px 2px 3px rgba(217,217,217,1),
+               inset 0px 0px 1px rgba(209,159,209,0);
+       text-shadow:
+               -1px -1px 0px rgba(141,204,116,0.6),
+               1px 1px 0px rgba(255,255,255,0.7);
+               cursor:pointer;
+  }
+  .css3button-ligth-green:hover{
+    color: #0d6109;
+  }
+  
+  a{
+    color:#3393C6;
+    text-decoration:none;
+  }
+  
+  #cart-detail td{
+    padding-bottom: 11px;
+    padding-top: 11px;
+    border-bottom:1px solid #d9d9d9;
+    background-color:white;
+  }
+  
+  #cart-detail thead th {
+    background: white;
+    border-bottom:1px solid gray;
+  }
+  
+  tr.product-information td.bold{
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+  }
+  tr.product-information td.regular{
+    font-weight: normal;
+  }
+  
+  .totals{
+    font-size:14px;
+    font-weight: bold;
+    background-color:#EBEBEB;
+  }
+  
+  #errorExplanation {
+    font-size: 1.3em;
+    margin: 1em 0;
+    padding: .8em;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: black;
+    background-color:#FBB2B4;
+    border: 1px solid black;
+  }
+  #errorExplanation h2 {
+    font-size: 1em;
+    margin: 0;
+    color: black;
+  }
+  #errorExplanation p {
+    margin: 0;
+    color: black;
+  }
+  #errorExplanation ul {
+    margin-top: 10px;
+    padding:0px;
+    list-style-type:none;
+  }
+  
+  /*contact us*/
+  #contact-us textarea{
+    width:295px;
+    height:65px;
+  }
+  .required{
+    font-size:12px;
+    font-weight:bold;
+    color:#ef7447;
+  }
+  span.bold{
+    font-weight:bold;
+  }
+  #contact-us .first-line{
+    margin-bottom:3px;
+  }
+  #contact-us form{
+    margin-left:20px;
+  }
+  /*checkout css*/
+  div#tabs {
+  font: 18px Georgia,"Times New Roman",Times,serif;
+  float: left;
+  z-index: 99;
+  background-color: white;
+  width: 660px;
+  }
+  div#tabs ul {
+  margin: 0;
+  font: 45px "Arvo",sans-serif;
+  }
+  div#tabs li {
+  display: inline;
+  float: left;
+  background-color: #ECEDED;
+  border-bottom: 5px solid #B7CBE9;
+  width: 130px;
+  height: 59px;
+  }
+  div#tabs li span.number {
+  color: #BFBFBF;
+  width: 30px;
+  font-size: 32px;
+  padding: 0 0 0 10px;
+  display: inline-block;
+  font-family: Arial;
+  }
+  div#tabs li span.title {
+  color: #BFBFBF;
+  font-size: 18px;
+  width: 90px;
+  padding: 0 0 0 0px;
+  display: inline-block;
+  }
+  div#tabs li.active {
+  background-color: white;
+  border: 5px solid #B7CBE9;
+  border-bottom: none;
+  }
+  div#tabs li.active span.number {
+  color: #324781;
+  }
+  div#tabs li.active span.title {
+  color: #758ED0;
+  }
+  
+  #tab-content{
+    width: 630px;
+    border-left: 5px solid #B7CBE9;
+    border-right: 5px solid #B7CBE9;
+    border-bottom: 5px solid #B7CBE9;
+    padding: 10px;
+  }
+  
+/*PRODUCT VARIANTS*/
+ul.product_variants{
+  list-style-type:none;
+}
+ul.product_variants li{
+  margin-top:23px;
+}
+ul.product_variants li label{
+  font-weight:normal;
+}
+ul.product_variants li a.variant{
+  float:left;
+  margin-right:4px;
+}
+/*END PRODUCT VARIANTS*/
+
+.refills h2{
+  margin:0px;
+}
+
+.fore-container{
+  width:290px;
+}
+
+.fore-container div{
+  float:left; 
+  width: 145px;
+}
+
+.css3button-ligth-gray {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #04aadc;
+  padding-top: 10px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 46%,
+		#dbdbdb 79%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#ffffff),
+		color-stop(0.46, #ebebeb),
+		color-stop(0.79, #dbdbdb),
+		to(#b5b5b5));
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border: 1px solid #949494;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(11,122,153,0),
+		0px 1px 0px rgba(7,114,143,0);
+		
+  height:36px;
+  display:inline-block;
+  width:90%;
+  margin:3px;
+}
+
+.css3button-ligth-gray:hover{
+  color: #04aadc;
+}
+
+/*footer styles*/
+#grey-footer{
+  background-color:#e8e8ee;
+}
+#footer-body{
+  margin: 10px 2px 11px 8px;
+}
+ul.footer-menu, ul.user-nav, ul.header-menu{
+  list-style-type:none;
+}
+ul.footer-menu li span{
+  font-size:14px;
+  color:#666666;
+}
+ul.footer-menu li a, span.electrictbot a{
+  font-size:12px;
+  color:#3393c6;
+  text-decoration:none;
+}
+ul.footer-menu li a:hover, span.electrictbot a:hover;{
+  text-decoration:underline;
+}
+.normal-text{
+  margin-left:7px;
+  font-size: 14px;
+  font-weight: 100;
+  vertical-align: top;
+  color:#45575e;
+}
+.small-text{
+  margin-left:7px;
+  font-size:10px;
+  font-weight:bold;
+  color:#45575e;
+}
+#footer-contact{
+  text-align:right;
+}
+.big{
+  font-size:24px;
+  font-weight:bold;
+  color:#45575e;
+}
+#disclaimer{
+  color:#808080;
+  text-align:justify;
+}
+#disclaimer p{
+  font-size:11px;
+}
+
+/*STATIC PAGES STYLES*/
+/*how it works*/
+.how-it-works-item{
+  width:574px;
+  background-color:#f4f4f9;
+  overflow: hidden;
+}
+.how-it-works-item > div{
+  margin:10px;
+}
+.how-it-works-item p, .how-it-works-item li{
+  font-size:12px;
+  color:#626262;
+}
+.how-it-works-item ul{
+  margin-left: 16px;
+  margin-bottom: 9px;
+  list-style-image: url('/images/smokefit/blue_bullet.gif');
+}
+.how-it-works-item p{
+  margin: 0px;
+  margin-bottom: 9px;
+}
+.how-it-works-item h2{
+  margin: 0px;
+  border-bottom: 1px solid #e0e0e6;
+  margin-bottom: 10px;
+}
+.how-it-works-sidebar-item h4{
+  margin-bottom:3px;
+}
+.how-it-works-sidebar-item .span-4{
+  text-align:right;
+}
+
+/*Testimonial page*/
+.testimonial p{
+  font-size:12px;
+  color:#626262;
+}
+.testimonial h3{
+  font-size:18px;
+  font-style:italic;
+  color:#595959;
+}
+
+/* STICKY FOOTER*/
+* {margin:0;padding:0;} 
+/* must declare 0 margins on everything, also for main layout components use padding, not 
+vertical margins (top and bottom) to add spacing, else those margins get added to total height 
+and your footer gets pushed down a bit more, creating vertical scroll bars in the browser */
+
+html, body, #wrap {height: 100%;}
+body > #wrap {height: auto; min-height: 100%;}
+#main {padding-bottom: 170px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+    margin-top: -170px; /* negative value of footer height */
+    height: 170px;
+    clear:both;} 
+
+/* CLEAR FIX*/
+.clearfix:after {content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */

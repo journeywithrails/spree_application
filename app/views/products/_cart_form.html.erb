@@ -1,0 +1,99 @@
+<%= form_for :order, :url => populate_orders_url do |f| %>
+  <%= hook :inside_product_cart_form do %>
+  
+    <% if product_price(@product) %>
+      <%= hidden_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => "title", :size => 3 %>
+      
+      <dl class="product-information span-8 last">
+        <dt class="span-3">Price</dt>
+        <dd class="span-4 last"><span class="bold big"><%= product_price(@product) %></span></dd>
+      </dl>
+      
+      <% if @product.has_variants? %>
+        <div id="product-variants">
+          <h4><%= "Presentations" %></h4>
+          <ul class="product_variants">
+            <%  has_checked = false
+            @product.variants.active.each_with_index do |v,index|
+              next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
+              checked = !has_checked && (v.in_stock || Spree::Config[:allow_backorders])
+              has_checked = true if checked %>
+              <li>
+                <table>
+                  <tr>
+                    <td><%= radio_button_tag "products[#{@product.id}]", v.id, checked, :disabled => !v.in_stock && !Spree::Config[:allow_backorders] %></td>
+                    <td>
+                      <div>
+                        <label for="<%= "products_#{@product.id}_#{v.id}" %>">
+                          <% if image = v.images.first %>
+                            <a href="<%= image.attachment.url(:original) %>" rel="facebox" class="variant">
+                              <%= image_tag(image.attachment.url(:mini)) %>
+                            </a>
+                          <% end %>
+                          <div class="variant-description">
+                            <%= variant_options v %>
+                            <% if variant_price_diff v %>
+                              <%= variant_price_diff v %>
+                            <% end %>
+                          </div>
+                          
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </li>
+            <% end%>
+          </ul>
+        </div>
+
+      <% end%>
+      
+      <!-- <dl class="product-information span-8 last upc">
+              <span class="upc-small">
+                <dt class="span-3">PART NUMBER</dt>
+                <dd class="span-4 last"><%= @product.sku %></dd>
+              </span>
+            </dl> -->
+      
+      <!--       <dl class="product-information span-8 last">
+              <dt class="span-3">Price</dt>
+              <dd class="span-4 last"><span class="bold big"><%= product_price(@product) %></span></dd>
+            </dl> -->
+      
+      <!--       <dl class="product-information span-8 last">
+              <dt class="span-3">Shipping</dt>
+              <dd class="span-4 last"><span>FREE</span></dd>
+            </dl> -->
+      
+      <dl class="product-information span-8 last">
+        <dt class="span-3">In Stock</dt>
+        <dd class="span-4 last"><span class="<%= @product.has_stock? ? "green" : "red" %>"><%= @product.has_stock? ? "YES" : "NO" %></span></dd>
+      </dl>
+      <hr />
+  
+    <% end %>
+  
+    <% if @product.cross_sells.present? %>
+      <div class="extras">
+        <% @product.cross_sells.each do |cross_sell| %>
+          <p>
+            <%= check_box_tag "variants[#{cross_sell.master.id}]", 1 %>
+            <label for="">
+              Add <em>'<%= link_to cross_sell.name, product_url(cross_sell) %>'</em> for <%= product_price(cross_sell) %>
+            </label>
+          </p>
+        <% end %>
+      </div>
+      <hr />
+    <% end %>
+    
+    <% if @product.has_stock? %>
+      <button type="submit" class="css3button-ligth-green">Add to cart</button>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% content_for :head do %>
+  <%= javascript_include_tag 'product' %>
+<% end %>

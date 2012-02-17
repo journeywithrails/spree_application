@@ -1,0 +1,19 @@
+<% content_for :sidebar_index_top do %>
+  <% if !@product.taxons.blank? %>
+    <div class="grey-box">
+      <div>
+        <h2><%= t('look_for_similar_items') %></h2>
+        <%= hook :product_taxons do %>
+        <div>
+          <ul id='similar_items_by_taxon'>
+            <% @product.taxons.each do |taxon| %>
+              <li><%= link_to taxon.name, "/t/#{taxon.permalink}" %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <hr class="space">
+  <% end %>
+<% end %>

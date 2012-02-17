@@ -1,0 +1,9 @@
+<div id="tabs" role="tabs">
+  <ul>
+    <li <%= controller.action_name == "registration" ? "class='active'" : "" %>><span class="number">1</span><span class="title">Create an Account</span></li>
+    <li <%= controller.action_name == "edit" && params[:state].eql?("address") ? "class='active'" : "" %>><span class="number">2</span><span class="title">Billing Address</span></li>
+    <li <%= controller.action_name == "edit" && params[:state].eql?("delivery") ? "class='active'" : "" %>><span class="number">3</span><span class="title">Shipping Method</span></li>
+    <li <%= controller.action_name == "edit" && params[:state].eql?("payment") ? "class='active number'" : "class=number" %>><span class="number">4</span><span class="title">Payment</span></li>
+    <li <%= controller.action_name == "edit" && params[:state].eql?("confirm") ? "class='active number'" : "class=number" %>><span class="number">5</span><span class="title">Place Order</span></li>
+  </ul>
+</div>

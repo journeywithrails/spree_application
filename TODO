@@ -1,0 +1,38 @@
+****** Todo
+  linking the facebook application. 
+    ssl error
+****** Bugs
+
+
+THE PASSPHRASE FOR SSL is: smokefit passphrase certificate
+password for ssl certificate: Druxec4e
+
+The files for generating the ssl certificate of this server are located in
+
+    /var/rapp
+
+Those files are:
+
+    server.csr
+    server.key
+    server.key.secure
+
+They where generated following this ubuntu's help guide:
+
+    https://help.ubuntu.com/10.04/serverguide/C/certificates-and-security.html
+
+THE PASSPHRASE FOR GODADDY SSL is: ezeesm0ke p7oduction ce7tific@te
+password for ssl certificate: Druxec4e*
+
+  Country Name (2 letter code) [AU]:US
+  State or Province Name (full name) [Some-State]:New York
+  Locality Name (eg, city) []:Brooklyn
+  Organization Name (eg, company) [Internet Widgits Pty Ltd]:Ezeesmoke
+  Organizational Unit Name (eg, section) []:Sales
+  Common Name (eg, YOUR name) []:www.ezeesmoke.com                           
+  Email Address []:simon@ezeesmoke.com
+
+  Please enter the following 'extra' attributes
+  to be sent with your certificate request
+  A challenge password []:Druxec4e*
+  An optional company name []:.

@@ -1,0 +1,20 @@
+<div class="span-8 prepend-1 last">
+  <%= yield :sidebar_index_top %>
+  
+  <%= render :partial => 'shared/small_fact_sheet' %>
+
+  <hr class="space">
+
+  <div class="span-6">
+    <%= render :partial => 'shared/live_chat_image' %>
+  </div>
+
+  <hr class="space">
+  
+  <%= render 'shared/all_products' %>
+  
+  <%= render 'shared/recently_viewed_products' %>
+
+</div>
+
+<hr class="space">

@@ -1,0 +1,69 @@
+<div class="span-24">
+  <h2><%= t("my_account") %><%= link_to "(edit)", edit_account_path, :id => "edit_account_link" %></h2>
+
+  <h3><%= t("my_orders") %></h3>
+  <% if @orders.present? %>
+    <table id="cart-detail">
+      <thead>
+        <tr>
+          <th><%= t("order_number") %></th>
+          <th><%= t("order_date") %></th>
+          <th><%= t("status") %></th>
+          <th><%= t("shipment_state") %></th>
+          <th><%= t("total") %></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @orders.each do |order| %>
+        <tr  class="product-information">
+          <td><%= link_to order.number, order_url(order) %></td>
+          <td class="normal"><%=order.created_at.to_date%></td>
+          <td class="normal"><%= t(order.state).titleize %></td>
+          <td class="normal"><%= order.shipment_state.capitalize %></td>
+          <td class="normal"><%= number_to_currency order.total %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p><%= t(:you_have_no_orders_yet) %></p>
+  <% end %>
+
+  <hr />
+
+  <% if @user.user_authentications.present? %>
+    <h3>My Logins</h3>
+    <table id="cart-detail">
+      <thead>
+        <tr>
+          <th>Provider</th>
+          <th>Nickname</th>
+          <th>Linked</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @user.user_authentications.each do |auth| %>
+        <tr class="<%= cycle('even', 'odd') %>">
+          <td class="normal">
+            <%= image_tag "social/#{auth.provider}_32.png", :size => "32x32" %>
+            <%= auth.provider.capitalize %>
+          </td>
+          <td class="normal"><%= auth.nickname %></td>
+          <td class="normal"><%= auth.created_at.to_date%></td>
+          <td class="normal"><%= link_to( "Unlink", auth, :confirm => 'Are you sure you want to remove unlink this account', :method => :delete, :class => "remove") %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <hr />
+  <% end %>
+
+  <h3>Link Accounts</h3>
+  <p>You can link your Smokefit account with an account you already have on any of the following sites:</p>
+  <% AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
+    <%= link_to(image_tag("social/#{user.preferred_provider}_32.png", :size => "32x32", :alt => "#{user.preferred_provider}"), user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym), :title => "Sign in with #{user.preferred_provider}") if user.active %>
+  <% end %>
+  
+</div>

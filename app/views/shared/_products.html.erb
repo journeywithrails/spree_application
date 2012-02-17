@@ -1,0 +1,61 @@
+<%
+  paginated_products = @searcher.products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+
+<%= will_paginate(paginated_products,
+                    :previous_label => "&#171; #{t('previous')}",
+                    :next_label => "#{t('next')} &#187;") %>
+<hr class="space">
+
+<% if products.empty? %>
+  <%= t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+  <h3><%= t(:search_results, :keywords => h(params[:keywords])) %></h3>
+<% end %>
+
+<div class="span-24 last">
+  <% if products.any? %>
+    <% product_count = products.size %>
+    <div class="span-15">
+      <% products.each_with_index do |product, index| %>
+        <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+          <div class="product-information">
+            <div class="span-7">
+              <%= link_to product_image(product, :width => "253px", :height => "147px"), product %>
+            </div>
+            <div class="span-8 last">
+              <h3><%= link_to product.name, product_path(product) %></h3>
+              <p><%= truncate strip_tags(product.description), :length => 300 %></p>
+              <div class="span-5 price">
+                Only <%= product_price(product) %>
+              </div>
+              <div class="span-3 last">
+                <%= link_to 'View More', product_path(product), :class => 'css3button-ligth-blue' %>
+              </div>
+            </div>
+          </div>
+          <% if index < product_count - 1 %>
+            <hr class="space"><hr class="dashed">
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <!-- Sidebar -->
+
+  <%= render :partial => 'shared/product_index_sidebar' %>
+
+  <%= will_paginate(paginated_products,
+                      :previous_label => "&#171; #{t('previous')}",
+                      :next_label => "#{t('next')} &#187;") %>
+  
+  <!-- end span-24 last -->
+</div>
+
+<% if paginated_products.respond_to?(:total_pages)
+      params.delete(:search)
+      params.delete(:taxon)
+    end
+%>

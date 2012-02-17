@@ -1,0 +1,22 @@
+<div class="span-24 last">
+  <div id="title" role="title" class="span-24 last">
+    <h1>CHECKOUT</h1>
+  </div>
+  
+  <div class="span-18">
+    <%= render "shared/error_messages", :target => @order %>
+    <%= render 'checkout_tabs' %>
+    <div class="span-18 last">
+      <div id="tab-content">
+        <%= render 'checkout_tab_content' %>
+      </div>
+    </div>
+  </div>
+  <!-- END MAIN CONTENT -->
+  
+  <div class="span-6 last">
+    <%= render 'summary' %>
+  </div>
+</div>
+
+<hr class="space">

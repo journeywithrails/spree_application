@@ -1,0 +1,10 @@
+<%= render "shared/error_messages", :target => @user %>
+
+<h2><%= t("editing_user") %></h2>
+
+<%= form_for(@user, :html => { :method => :put }) do |f| %>
+  <%= render 'shared/user_form', :f => f %>
+  <div class="submit">
+    <button type="submit" class="css3button-ligth-blue">Update Account</button>
+  </div>
+<% end %>

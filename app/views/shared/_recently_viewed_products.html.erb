@@ -1,0 +1,16 @@
+<% if get_recently_viewed_products.any? %>
+  <hr class="space">
+  
+  <div class="grey-box">
+    <div>
+      <h2>Viewed Products</h2>
+      <ul>
+        <% get_recently_viewed_products.each do |p| %>
+          <li><%= link_to p.name, p %></li>
+        <% end -%>
+      </ul>
+    </div>
+  </div>
+  
+  <hr class="space">
+<% end %>
